@@ -1,0 +1,5 @@
+name: RCCore
+version: '${project.version}'
+main: net.republicraft.rccore.RCCore
+api-version: '1.20'
+load: STARTUP

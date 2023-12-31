@@ -1,0 +1,2 @@
+# RCCore
+ RepubliCraft Core
