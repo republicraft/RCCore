@@ -32,7 +32,7 @@ public abstract class ConfigurationFile {
 		file = new File(plugin.getDataFolder() + (subDirectory.isEmpty() ? "" : File.separator + subDirectory), fileName);
 		if (!file.exists()) {
 			file.getParentFile().mkdirs();
-			plugin.saveResource("config" + File.separator + fileName, false);
+			plugin.saveResource(fileName, false);
 		}
 	}
 	
