@@ -26,7 +26,9 @@ public abstract class Command implements TabExecutor {
 	
 	@Override
 	public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull org.bukkit.command.Command command, @NotNull String label, @NotNull String[] args) {
-		return null;
+		if (commandSender instanceof Player player) return playerTabCompletion(player, command, label, args);
+		else if (commandSender instanceof ConsoleCommandSender console) return consoleTabCompletion(console, command, label, args);
+		else return handleOtherTabCompletion(commandSender, command, label, args);
 	}
 	
 	public abstract List<String> playerTabCompletion(@NotNull Player commandSender, @NotNull org.bukkit.command.Command command, @NotNull String label, @NotNull String[] args);
